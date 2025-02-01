@@ -15,8 +15,9 @@ class ApiProvider {
 
   Future<dynamic> post(String url, Map<String, dynamic> data) async {
     try {
-      final response = await _dio.post(url, data: data);
-      return response.data;
+      // final response = await _dio.post(url, data: data);
+      // return response.data;
+      return {'token': 'token'};
     } on DioException catch (e) {
       throw ServerException(message: e.message!);
     }

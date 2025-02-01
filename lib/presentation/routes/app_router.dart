@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:demo/presentation/screens/home/home_screen.dart';
 import 'package:demo/presentation/screens/profile/profile_screen.dart';
 import 'package:demo/presentation/screens/settings/settings_screen.dart';
 import 'package:demo/presentation/screens/login/login_screen.dart';
+
+import '../../features/home/presentation/screens/home_screen.dart';
 
 class AppRouter {
   Route onGenerateRoute(RouteSettings settings) {

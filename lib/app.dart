@@ -7,6 +7,8 @@ import 'package:demo/core/constants/app_theme.dart';
 class MyApp extends StatelessWidget {
   final AppRouter _appRouter = AppRouter();
 
+  MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<AuthBloc, AuthState>(
