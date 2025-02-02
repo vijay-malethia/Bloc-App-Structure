@@ -1,40 +1,11 @@
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:demo/domain/repositories/auth_repository.dart';
+import 'package:bloc/bloc.dart';
+import 'package:meta/meta.dart';
 
-// Events
-abstract class AuthEvent {}
+import '../../../../domain/repositories/auth_repository.dart';
 
-class AuthLoginRequested extends AuthEvent {
-  final String username;
-  final String password;
+part 'auth_event.dart';
+part 'auth_state.dart';
 
-  AuthLoginRequested({required this.username, required this.password});
-}
-
-class AuthLogoutRequested extends AuthEvent {}
-
-// States
-abstract class AuthState {}
-
-class AuthInitial extends AuthState {}
-
-class AuthLoading extends AuthState {}
-
-class AuthAuthenticated extends AuthState {
-  final String token;
-
-  AuthAuthenticated({required this.token});
-}
-
-class AuthUnauthenticated extends AuthState {}
-
-class AuthFailure extends AuthState {
-  final String error;
-
-  AuthFailure({required this.error});
-}
-
-// BLoC
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
   final AuthRepository authRepository;
 
